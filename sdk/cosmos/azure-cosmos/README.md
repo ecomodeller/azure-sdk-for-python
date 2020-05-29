@@ -166,7 +166,7 @@ A Cosmos DB SQL API database supports querying the items in a container with [Co
 This example queries a container for items with a specific `id`:
 
 ```Python
-database = client.get_(database_name)
+database = client.get_database_client(database_name)
 container = database.get_container_client(container_name)
 
 # Enumerate the returned items
