@@ -134,11 +134,11 @@ To insert items into a container, pass a dictionary containing your data to [Con
 This example inserts several items into the container, each with a unique `id`:
 
 ```Python
-database_client = client.get_database_client(database_name)
-container_client = database.get_container_client(container_name)
+database = client.get_database_client(database_name)
+container = database.get_container_client(container_name)
 
 for i in range(1, 10):
-    container_client.upsert_item({
+    container.upsert_item({
             'id': 'item{0}'.format(i),
             'productName': 'Widget',
             'productModel': 'Model {0}'.format(i)
@@ -166,7 +166,7 @@ A Cosmos DB SQL API database supports querying the items in a container with [Co
 This example queries a container for items with a specific `id`:
 
 ```Python
-database = client.get_database_client(database_name)
+database = client.get_(database_name)
 container = database.get_container_client(container_name)
 
 # Enumerate the returned items
